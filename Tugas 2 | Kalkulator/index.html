@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <style>
+        table {
+            margin: 20px;
+            float: left;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1><center>Simple Kalkulator</center></h1>
+    <p><center>In this meet we need to make simple calculator using js</center></p>
+    <p> insert your number here !</p>
+    <table>
+        <tr>
+            <td>Number 1:</td>
+            <td><input type="text" id="num1"></td>
+        </tr>
+        <tr>
+            <td>Number 2:</td>
+            <td><input type="text" id="num2"></td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td><button onclick="operasi('+')">+</button></td>
+            <td><button onclick="operasi('-')">-</button></td>
+            <td><button onclick="operasi('*')">*</button></td>
+            <td><button onclick="operasi('/')">/</button></td>
+        </tr>
+    </table>
+
+    <h2>Result:</h2>
+    <p id="hasil"></p>
+
+    <script>
+        function operasi(operator) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = 0;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById('hasil').textContent = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
